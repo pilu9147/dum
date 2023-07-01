@@ -1,4 +1,6 @@
-
+let users = JSON.parse(sessionStorage.getItem("loggedUser"))
+let prof = document.getElementById('profile')
+prof.textContent = users.fstName
 let fname = document.getElementById('fname');
 let lname = document.getElementById('lname');
 let savebtn = document.getElementById('save-info');
