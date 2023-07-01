@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@300;400;500;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200;1,300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Poppins', sans-serif;
+}
+.nav {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background-color: #000;
+    padding: 0 20px;
+}
+.nav-items {
+    display: flex;
+    justify-content: space-between !important;
+}
+.nav-items a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: white;
+}
+
+
+.btn {
+    color: #fff;
+    background-color: black;
+    padding: 8px 40px;
+    margin-top: 10px;
+}
+
+
+       /* sidebar        ---------------------------------------------- */
+ .main{
+        display: flex;
+     }
+.main .sidebar {
+        background-color: #000;
+        color: #fff;
+        width: 220px;
+        height: calc(100vh - 50px) !important;
+        
+     }
+.colors, .sizes ,.slidecontainer, .price, .button {
+    margin-left: 20px ;
+}
+.sidebar h3 {
+    margin: 10px 0;
+}
+.range input {
+    margin: 10px 0;
+}
+#filter-btn {
+    color: black;
+    background-color: #fff;
+    padding: 8px 40px;
+    margin-top: 10px;
+}
+#myRange {
+    accent-color: #fff;
+    background-color: #fff;
+    outline: none;
+
+}
+
+/* ------------------------------------------------  search filter cards ------------ */
+.right {
+    height: calc(100vh - 50px);
+    width: calc(100vw - 220px);
+    padding: 10px;
+    overflow-y: scroll;
+}
+.filter-catogory {
+    margin: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#item-search{
+    padding: 10px;
+    width: 100%;
+    height: 40px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.btns {
+    color: black;
+    background-color: white;
+    padding: 8px 90px;
+    border-radius: 10px;
+}
+.btns:hover {
+    color: #fff;
+    background-color:black;
+}
+
+
+/* -----------------------------------------    cardss ---------------------------- */
+
+.items-cont {
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+   gap: 20px;
+  
+}
+.items-cont .card {
+    border: 1px solid black;
+    object-fit: cover;
+    width: 280px;
+    height: auto;
+    background-color: #f1f1f1;
+    margin: 10px auto;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+  .card > img {
+    border-top-left-radius:20px ;
+    border-top-right-radius: 20px;
+    width: 277px;
+    height: 230px;
+    border-bottom: 1px solid black;
+  }
+  .card .content .cont {
+    padding: 5px 15px;
+  }
+  .card .content .title {
+    font-size : 18px;
+    font-weight: 400;
+  }
+  .cont .titles {
+    letter-spacing: 1.8;
+    line-height: 1.4;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    height:80px;
+  }
+  .prflx {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .color , .prices {
+    color: black;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  .sub-div .rating,.sub-div .size{
+         text-align: center;
+         font-size: 16px;
+         background-color: #000;
+         color: white;
+         font-weight: 400;
+         width: 30px;
+         border-radius: 2px;
+  }
+
+  .add-cart {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    color: white;
+    background-color: black;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 40px;
+  }
+  .add-cart:hover {
+    background-color: #333;
+  }
+  .addToCart {
+    background-color: rgb(182, 141, 64); 
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 0px 5px;
+    height: 40px;
+    display: none;
+    border-top: 1px solid black;
+  }
+
+
+
+
+/* 
+
+
+
+.nav {
+  background-color: #333;
+}
+
+.nav-items a {
+  color: white;
+}
+
+
+.sidebar {
+  background-color: #222;
+}
+
+.colors, .sizes, .slidecontainer, .price, .button {
+  margin-left: 20px;
+}
+
+.right {
+  background-color: #f1f1f1;
+}
+
+.filter-catogory {
+  background-color: #ddd;
+}
+
+.btns {
+  color: white;
+  background-color: #333;
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  border-bottom: none;
+}
+
+.card .content {
+  color: #333;
+}
+
+.cont .titles {
+  color: #555;
+}
+
+.color, .prices {
+  color: #222;
+}
+
+.sub-div .rating, .sub-div .size {
+  background-color: #222;
+  color: white;
+}
+
+.add-cart {
+  background-color: #333;
+}
+
+.addToCart {
+  background-color: #b68d40;
+}
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+
+.coral {
+  color: coral;
+}
+
+.green {
+  color: green;
+}
+
+.purple {
+  color: purple;
+} */
