@@ -1,14 +1,22 @@
-let users = JSON.parse(sessionStorage.getItem("loggedUser"))
+let curruser = JSON.parse(sessionStorage.getItem("loggedUser"))
 let prof = document.getElementById('profile')
-prof.textContent = users.fstName
 let fname = document.getElementById('fname');
 let lname = document.getElementById('lname');
 let savebtn = document.getElementById('save-info');
 let note = document.getElementById('note');
 
-let curruser = JSON.parse(sessionStorage.getItem('loggedUser'));
-fname.value = curruser.fstName; // Corrected property name
-lname.value = curruser.lstName; // Corrected property name
+//let curruser = JSON.parse(sessionStorage.getItem('loggedUser'));
+if (curruser == null) {
+  alert("Please login first!!")
+  window.location.href = '/login/'
+} else {
+  fname.value = curruser.fstName; // Corrected property name
+  lname.value = curruser.lstName; // Corrected property name
+  prof.textContent = curruser.fstName
+}
+
+
+
 
 // changing and updating name-----------------------------------------------------------
 
@@ -85,6 +93,7 @@ changepass.addEventListener('click', (event) => {
 
 let logout = document.getElementById("logout-btn")
 logout.addEventListener('click', () => {
-  //sessionStorage.clear();
+  sessionStorage.clear();
+  localStorage.clear();
   window.location.href = '../index.html'
 })

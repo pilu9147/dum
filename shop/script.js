@@ -1,7 +1,13 @@
 let search = document.getElementById("item-search");
-let users = JSON.parse(sessionStorage.getItem("loggedUser"))
+let users = JSON.parse(sessionStorage.getItem("loggedUser"));
+//console.log("users",users);
 let prof = document.getElementById('profile')
-prof.textContent = users.fstName
+if(users ==null){
+  alert("Please login first!!")
+  window.location.href = '/login/'
+}else{
+  prof.textContent = users.fstName
+}
 // fetching data  -------------------------------------------------------
 
 window.addEventListener("load", fetchData);
@@ -24,6 +30,7 @@ async function fetchData() {
     console.log("error fetching", e);
   }
 }
+
 
 let color = ["red", "blue", "coral", "purple", "green"];
 function getRandomColor() {
@@ -98,6 +105,38 @@ function renderData(data) {
     } 
   }
 }
+function opt(getData, t) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      getData(...args);
+    }, t);
+  };
+}
+
+let getdata = (val) => {
+  let data = products.filter((d) => {
+    return d.category.includes(val);
+  });
+
+  if (data.length === 0) {
+    men.innerText = 'No matches found';
+  } else {
+    men.innerHTML = "";
+    women.innerHTML = "";
+    jwe.innerHTML = "";
+    elec.innerHTML = "";
+    console.log('rendred',data);
+    renderData(data);
+  }
+};
+
+let getoptdata = opt(getdata, 300);
+
+search.addEventListener('keyup', (e) => {
+  getoptdata(e.target.value);
+});
 
 // --------------------------------filter sidebar       ----------------------------------------------------------------------
 
@@ -259,7 +298,7 @@ let filtered =[]
 
 function myFunction(id){
   let localstrg = JSON.parse(localStorage.getItem('cartprod'));
-  let curr = localstrg.find((e)=>e.id===id)
+ // let curr = localstrg.find((e)=>e.id===id)
   let addremove = document.getElementById(`addRemove-${id}`);
   let addbtn = document.getElementById(`addcart-${id}`);
     addbtn.style.display = 'none';
