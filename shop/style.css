@@ -14,7 +14,7 @@ font-family: 'Poppins', sans-serif;
     justify-content: space-between;
     align-items: center;
     color: white;
-    background-color: #000;
+    background-color: #000 !important;
     padding: 0 20px;
 }
 .nav-items {
@@ -26,7 +26,12 @@ font-family: 'Poppins', sans-serif;
     text-decoration: none;
     color: white;
 }
-
+#profile {
+  background-color: #f2f2f2;
+  padding: 2px 4px;
+  color: #000;
+  border-radius: 3px;
+}
 
 .btn {
     color: #fff;
@@ -35,8 +40,11 @@ font-family: 'Poppins', sans-serif;
     margin-top: 10px;
 }
 
-
-       /* sidebar        ---------------------------------------------- */
+.categort-heading {
+  font-size: 25px;
+  font-weight: 500px;
+}
+   /* sidebar        ---------------------------------------------- */
  .main{
         display: flex;
      }
@@ -70,6 +78,7 @@ font-family: 'Poppins', sans-serif;
 }
 
 /* ------------------------------------------------  search filter cards ------------ */
+
 .right {
     height: calc(100vh - 50px);
     width: calc(100vw - 220px);
@@ -82,6 +91,18 @@ font-family: 'Poppins', sans-serif;
     justify-content: space-between;
     align-items: center;
 }
+.sea {
+  display: flex;
+  align-items: center;
+}
+#menu {
+  border: 1px solid black;
+  padding: 7px;
+  margin-left: 5px;
+  border-radius: 8px ;
+  display: none;
+}
+
 #item-search{
     padding: 10px;
     width: 100%;
@@ -90,6 +111,7 @@ font-family: 'Poppins', sans-serif;
     border: 1px solid black;
     border-radius: 10px;
 }
+
 .btns {
     color: black;
     background-color: white;
@@ -215,7 +237,6 @@ font-family: 'Poppins', sans-serif;
 @media screen and (max-width: 480px) {
 /* Add these styles to your existing CSS file or create a new one */
 .nav {
-  background-color: #333;
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -232,26 +253,45 @@ font-family: 'Poppins', sans-serif;
 }
 
 .nav-items a {
-  color: #fff;
-  margin-right: 10px;
-  text-decoration: none;
+  margin-left: 13px !important;
+  margin-right: 0px !important;
+text-decoration: none;
+font-size: 14px;
 }
-
-#sidebar-toggle {
-  background-color: transparent;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-size: 16px;
-  margin-right: 10px;
+#profile {
+  margin-left: 10px !important;
+  margin-right: 0px !important;
 }
 
 
-    .sidebar {
-        display: none;
-    }
 
+    /* Show the menu button */
+    #menu{
+      display: block;
+  }
 
+  /* Hide the sidebar by default */
+  .sidebar {
+      display: none;
+  }
+
+ 
+  .sidebar.sidebar-visible {
+    height: 100vh !important;
+    display: block;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    bottom: 0;
+    z-index: 9999;
+  }
+  #filter-btn {
+    margin-top: 0px;
+  }
+  .nav-items a {
+    margin: 0 10px;
+    font-size: 14px;
+  }
     .right {
         width: 100%;
     }
@@ -262,4 +302,13 @@ font-family: 'Poppins', sans-serif;
     .btns {
       padding: 2px 10px;
     }
-}
+    .sidebar h3 {
+      margin: 8px 0;
+  }
+  .range input {
+      margin: 8px 0;
+  }
+  #filter-btn {
+      margin-top: 10px;
+  }
+  }

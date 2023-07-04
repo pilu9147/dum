@@ -343,4 +343,9 @@ function updateQuantity(id, quantity) {
 }
 
 
+// Add JavaScript to toggle the sidebar visibility
+document.getElementById("menu").addEventListener("click", function() {
+  var sidebar = document.querySelector(".sidebar");
+  sidebar.classList.toggle("sidebar-visible");
+});
 
